@@ -19,7 +19,7 @@
 
 H:
 
-# Rasterization
+# Rendering
 
 Jean Pierre Charalambos
 
@@ -27,11 +27,161 @@ H:
 
 # Outline
 
-1. Introduction to rendering
-<!-- .element: class="fragment" data-fragment-index="1"-->
-2. 
-<!-- .element: class="fragment" data-fragment-index="1"-->
-<!-- .element: class="fragment" data-fragment-index="1"-->
+1. Introduction
+2. Ray-tracing overview
+3. Rasterization overview
+4. Triangle rasterization
+
+H:
+
+## Introduction: Alberti's Veil
+### Linear perspective
+
+<figure>
+    <img height='400' src='fig/durer2.gif' />
+    <figcaption>[Dürer's Alberti Veil](http://visualcomputing.github.io/Cognitive)</figcaption>
+</figure>
+
+V:
+
+## Introduction: Virtual camera model
+### Representation
+
+<figure>
+    <img height='400' src='fig/pinholecam.png' />
+    <figcaption>Non inversion of the rendered image</figcaption>
+</figure>
+
+V:
+
+## Introduction: Virtual camera model
+### Frustum
+
+<figure>
+    <img height='400' src='fig/frustum.png'/>
+    <figcaption>Near and far clipping frustum planes</figcaption>
+</figure>
+
+V:
+
+## Introduction: Virtual camera model
+### Frustum
+
+<figure>
+    <img height='400' src='fig/frustumsideview.png'/>
+    <figcaption>Frustum side view</figcaption>
+</figure>
+
+V:
+
+## Introduction: Virtual camera model
+### Image plane
+
+<figure>
+    <img height='400' src='fig/clippingplanescanvas.png'/>
+    <figcaption>Various valid canvas positions</figcaption>
+</figure>
+
+V:
+
+## Introduction: Virtual camera model
+### Image plane
+
+<figure>
+    <img height='400' src='fig/canvascoordinates.png'/>
+    <figcaption>Positioning the canvas at the near plane</figcaption>
+</figure>
+
+V:
+
+## Introduction: Visibility algorithms
+### Rasterization
+
+<figure>
+    <img height='400' src='fig/rasterization.png'/>
+    <figcaption>Perspective projection of points</figcaption>
+</figure>
+
+V:
+
+## Introduction: Visibility algorithms
+### Rasterization
+
+<figure>
+    <img height='400' src='fig/rasterization1.png'/>
+    <figcaption>Perspective projection of a point</figcaption>
+</figure>
+
+V:
+
+## Introduction: Visibility algorithms
+### Rasterization is object centric
+
+```processing
+for (each point in scene) {
+transform point from world space to camera space;
+perform perspective divide (x/-z, y/-z);
+  if (point lies within canvas boundaries) {
+    convert coordinates to NDC space;
+    convert coordinates from NDC to raster space;
+    record point in image;
+  }
+}
+```
+
+V:
+
+## Introduction: Visibility algorithms
+### Ray-tracing
+
+<figure>
+    <img height='400' src='fig/ray_trace_diagram.png'/>
+    <figcaption>Casting rays into a scene</figcaption>
+</figure>
+
+V:
+
+## Introduction: Visibility algorithms
+### Ray-tracing
+
+<figure>
+    <img height='400' src='fig/ballsrender.png'/>
+    <figcaption>Photorealism</figcaption>
+</figure>
+
+V:
+
+## Introduction: Visibility algorithms
+### Ray-tracing is image centric
+#### Pseudocode
+
+```processing
+for (each pixel in the image) {
+  // step 1
+  build a camera ray: trace line from current pixel location to camera's aperture;
+  // step 2
+  cast ray into the scene;
+  // step 3
+  if (ray intersects an object) {
+    set current pixel's color with object's color at the intersection point;
+  } else {
+    set current pixel's color to black;
+  }
+}
+```
+
+H:
+
+## Ray-tracing overview
+
+H:
+
+## Rasterization overview
+
+H:
+
+## Triangle rasterization
+
 
 H:
 
