@@ -21,16 +21,16 @@ H:
 
 # Rendering
 
-Jean Pierre Charalambos
+Visual Computing
 
 H:
 
 # Outline
 
-1. Introduction
-2. Ray-tracing overview
-3. Rasterization overview
-4. Triangle rasterization
+1. Introduction: the problem
+2. Ray-tracing approach
+3. Rasterization approach
+4. Final thoughts
 
 H:
 
@@ -65,16 +65,6 @@ V:
 V:
 
 ## Introduction: Virtual camera model
-### Frustum
-
-<figure>
-    <img height='400' src='fig/frustumsideview.png'/>
-    <figcaption>Frustum side view</figcaption>
-</figure>
-
-V:
-
-## Introduction: Virtual camera model
 ### Image plane
 
 <figure>
@@ -94,8 +84,27 @@ V:
 
 V:
 
-## Introduction: Visibility algorithms
-### Rasterization
+## Introduction: Virtual camera model
+### Frustum
+
+<figure>
+    <img height='400' src='fig/frustumsideview.png'/>
+    <figcaption>Frustum side view</figcaption>
+</figure>
+
+V:
+
+## Introduction: Virtual camera model
+### Challenges
+
+> Spatial coherence -> Visibility
+
+> Visual appealing -> Shading
+
+H:
+
+## Raster approach: strategy
+### Object centric
 
 <figure>
     <img height='400' src='fig/rasterization.png'/>
@@ -104,8 +113,8 @@ V:
 
 V:
 
-## Introduction: Visibility algorithms
-### Rasterization
+## Raster approach: strategy
+### Object centric
 
 <figure>
     <img height='400' src='fig/rasterization1.png'/>
@@ -114,8 +123,8 @@ V:
 
 V:
 
-## Introduction: Visibility algorithms
-### Rasterization is object centric
+## Raster approach: strategy
+### Object centric
 
 ```processing
 for (each point in scene) {
@@ -131,8 +140,23 @@ perform perspective divide (x/-z, y/-z);
 
 V:
 
-## Introduction: Visibility algorithms
-### Ray-tracing
+## Raster approach: visibility
+
+
+
+V:
+
+## Raster approach: shading
+
+<!– 
+Desarrollar el tema que se encuentra aca (en slides verticales, i.e., empleando el tag 'V:'):
+https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage
+–>
+
+H:
+
+## Ray-tracing approach: strategy
+### Image centric
 
 <figure>
     <img height='400' src='fig/ray_trace_diagram.png'/>
@@ -141,8 +165,8 @@ V:
 
 V:
 
-## Introduction: Visibility algorithms
-### Ray-tracing
+## Ray-tracing approach: strategy
+### Image centric
 
 <figure>
     <img height='400' src='fig/ballsrender.png'/>
@@ -151,9 +175,8 @@ V:
 
 V:
 
-## Introduction: Visibility algorithms
-### Ray-tracing is image centric
-#### Pseudocode
+## Ray-tracing approach: strategy
+### Image centric
 
 ```processing
 for (each pixel in the image) {
@@ -170,18 +193,49 @@ for (each pixel in the image) {
 }
 ```
 
+V:
+
+## Ray-tracing approach: visibility
+
+<figure>
+    <img height='400' src='fig/ray-tracing-points.png'/>
+    <figcaption>Visibility computation</figcaption>
+</figure>
+
+V:
+
+## Ray-tracing approach: visibility
+
+```processing
+for (each pixel in the image) {
+  // step 1
+  build a camera ray: trace line from current pixel location to camera's aperture;
+  // step 2
+  cast ray into the scene;
+  // step 3
+  for (each object in the scene) {
+    set current pixel's color with closest object's color at the intersection point;
+  }
+}
+```
+
+V:
+
+## Ray-tracing approach: shading
+
+<!–
+Desarrollar el tema que se encuentra aca (en slides verticales, i.e., empleando el tag 'V:'):
+https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage
+desde la seccion: 'Casting Rays into the scene'
+
+el tema para seguirla seria este de aca:
+https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview/light-transport-ray-tracing-whitted
+pero no el Lunes, sino quizas mas adelante
+–>
+
 H:
 
-## Ray-tracing overview
-
-H:
-
-## Rasterization overview
-
-H:
-
-## Triangle rasterization
-
+## Final thoughts
 
 H:
 
