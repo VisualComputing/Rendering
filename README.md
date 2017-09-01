@@ -1,4 +1,4 @@
-## Visual Computing Slides -- Rasterization
+## Visual Computing Slides -- Rendering
 
 Part of the *Visual Computing* course given at [National University of Colombia](http://www.disi.unal.edu.co/) by [Jean Pierre Charalambos](http://otrolado.info) and [Andres Colubri](http://andrescolubri.net/).
 
@@ -11,8 +11,8 @@ Made possible thanks to...
 ## Installation
 
  ```sh
- $ git clone https://github.com/VisualComputing/Rasterization.git
- $ cd Rasterization
+ $ git clone https://github.com/VisualComputing/Rendering.git
+ $ cd Rendering
  $ git checkout gh-pages
  ```
 
@@ -37,7 +37,7 @@ External markdown and speaker notes, require that presentations run from a local
 
 2. Install [Grunt](http://gruntjs.com/getting-started#installing-the-cli)
 
-3. Install dependencies (you must be already on the presentation folder, otherwise ```$ cd Rasterization```)
+3. Install dependencies (you must be already on the presentation folder, otherwise ```$ cd Rendering```)
 
  ```sh
  $ npm install
