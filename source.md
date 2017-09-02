@@ -97,9 +97,32 @@ V:
 ## Introduction: Virtual camera model
 ### Challenges
 
-> Spatial coherence -> Visibility
+> 1. Spatial coherence -> Visibility
+<p>
+> 2. Visual appealing -> Shading
 
-> Visual appealing -> Shading
+V:
+
+## Introduction: Virtual camera model
+### Challenges: Visibility
+#### Geometry related
+
+<video width="400" height="400" controls data-autoplay loop src="vid/coordinate_system_no_depth.ogv"></video>
+
+V:
+
+## Introduction: Virtual camera model
+### Challenges: Shading
+#### Physics related
+
+<figure>
+    <img height='400' src='fig/rendering_eq.png'/>
+    <figcaption>[Rendering equation](https://en.wikipedia.org/wiki/Rendering_equation)</figcaption>
+</figure>
+
+N:
+
+integral equation in which the equilibrium radiance leaving a point is given as the sum of emitted plus reflected radiance under a geometric optics approximation
 
 H:
 
@@ -141,8 +164,111 @@ perform perspective divide (x/-z, y/-z);
 V:
 
 ## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
 
+1. [Painter's algorithm](https://en.wikipedia.org/wiki/Painter%27s_algorithm)
+1. [Binary space partioning (BSP)](https://en.wikipedia.org/wiki/Binary_space_partitioning)
+1. [Warnock algorithm](https://en.wikipedia.org/wiki/Warnock_algorithm)
+1. [Z-Buffering](https://en.wikipedia.org/wiki/Z-buffering)
 
+V:
+
+## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
+#### [Painter's algorithm](https://en.wikipedia.org/wiki/Painter%27s_algorithm)
+
+<figure>
+    <img height='400' src='fig/painter_algorithm.png'/>
+    <figcaption>Draw distant objects first</figcaption>
+</figure>
+
+V:
+
+## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
+#### [Binary space partioning (BSP)](https://en.wikipedia.org/wiki/Binary_space_partitioning)
+
+<figure>
+    <img height='400' src='fig/bsp_input.gif'/>
+    <figcaption>Input scene</figcaption>
+</figure>
+
+V:
+
+## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
+#### [Binary space partioning (BSP)](https://en.wikipedia.org/wiki/Binary_space_partitioning)
+
+<figure>
+    <img height='400' src='fig/bsp1.gif'/>
+    <figcaption>(Offline) subdivision step</figcaption>
+</figure>
+
+V:
+
+## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
+#### [Binary space partioning (BSP)](https://en.wikipedia.org/wiki/Binary_space_partitioning)
+
+<figure>
+    <img height='400' src='fig/bsp2.gif'/>
+    <figcaption>(Offline) subdivision step</figcaption>
+</figure>
+
+V:
+
+## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
+#### [Binary space partioning (BSP)](https://en.wikipedia.org/wiki/Binary_space_partitioning)
+
+<figure>
+    <img height='400' src='fig/bsp.gif'/>
+    <figcaption>BSP Tree</figcaption>
+</figure>
+
+V:
+
+## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
+#### [Binary space partioning (BSP)](https://en.wikipedia.org/wiki/Binary_space_partitioning)
+
+<figure>
+    <img height='400' src='fig/bsp_scene.jpg'/>
+    <figcaption>(Runtime) BSP visit</figcaption>
+</figure>
+
+V:
+
+## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
+#### [Warnock algorithm](https://en.wikipedia.org/wiki/Warnock_algorithm)
+
+<figure>
+    <img height='400' src='fig/warnock1.png'/>
+    <figcaption>Polygon visibility cases: a) polygon fills the viewport, b) polygon partially and c) completely visible, d) polygon invisible</figcaption>
+</figure>
+
+V:
+
+## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
+#### [Warnock algorithm](https://en.wikipedia.org/wiki/Warnock_algorithm)
+
+<figure>
+    <img height='400' src='fig/warnock.png'/>
+    <figcaption>Subdivision step example</figcaption>
+</figure>
+
+V:
+
+## Raster approach: visibility
+### [Hidden surface removal (HSR)](https://en.wikipedia.org/wiki/Hidden_surface_determination) algorithms
+#### [Z-Buffering](https://en.wikipedia.org/wiki/Z-buffering)
+
+<figure>
+    <img height='400' src='fig/zbuffer.png'/>
+    <figcaption>Zbuffer data</figcaption>
+</figure>
 
 V:
 
@@ -225,7 +351,7 @@ V:
 
 <!–
 Desarrollar el tema que se encuentra aca (en slides verticales, i.e., empleando el tag 'V:'):
-https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage
+https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview
 desde la seccion: 'Casting Rays into the scene'
 
 el tema para seguirla seria este de aca:
