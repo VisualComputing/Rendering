@@ -367,7 +367,7 @@ H:
 
 <!-- .element: class="fragment" data-fragment-index="1"-->
 
-> Challenges: visibility & shading
+> Challenges: visibility (geometry) & shading (physics)
 
 <!-- .element: class="fragment" data-fragment-index="2"-->
 
@@ -379,6 +379,12 @@ V:
 
 ## Final thoughts
 ### Raster vs Ray-tracing
+
+| _Feature_        | Rasterization | Ray-tracing |
+|------------------|---------------|-------------|
+| _Philosophy_     | [Intromission](https://en.wikipedia.org/wiki/Visual_perception#Early_studies)  | [Emission](https://en.wikipedia.org/wiki/Visual_perception#Early_studies) |
+| _Parallelizable_ | Easy          | Hard        |
+| _Complexity_     | Linear        | Exponential |
 
 V:
 
