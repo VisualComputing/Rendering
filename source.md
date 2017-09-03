@@ -380,11 +380,13 @@ V:
 ## Final thoughts
 ### Raster vs Ray-tracing
 
-| _Feature_        | Rasterization | Ray-tracing |
-|------------------|---------------|-------------|
-| _Philosophy_     | [Intromission](https://en.wikipedia.org/wiki/Visual_perception#Early_studies)  | [Emission](https://en.wikipedia.org/wiki/Visual_perception#Early_studies) |
-| _Parallelizable_ | Easy          | Hard        |
-| _Complexity_     | Linear        | Exponential |
+| _Feature_         | Rasterization | Ray-tracing |
+|-------------------|---------------|-------------|
+| _Philosophy_      | [Intromission](https://en.wikipedia.org/wiki/Visual_perception#Early_studies)  | [Emission](https://en.wikipedia.org/wiki/Visual_perception#Early_studies) |
+| _Visibility_      | Easy          | Trivial     |
+| _Shading_ realism | Great         | _Promising_ |
+| _Parallelizable_  | Easy          | Hard        |
+| _Complexity_      | Linear        | Exponential |
 
 V:
 
