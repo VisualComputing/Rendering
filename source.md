@@ -44,7 +44,7 @@ H:
 
 V:
 
-## Introduction: Virtual camera model
+## Introduction: [Virtual camera model](https://www.scratchapixel.com/lessons/3d-basic-rendering/3d-viewing-pinhole-camera/virtual-pinhole-camera-model)
 ### Representation
 
 <figure>
@@ -54,7 +54,7 @@ V:
 
 V:
 
-## Introduction: Virtual camera model
+## Introduction: [Virtual camera model](https://www.scratchapixel.com/lessons/3d-basic-rendering/3d-viewing-pinhole-camera/virtual-pinhole-camera-model)
 ### Frustum
 
 <figure>
@@ -64,7 +64,7 @@ V:
 
 V:
 
-## Introduction: Virtual camera model
+## Introduction: [Virtual camera model](https://www.scratchapixel.com/lessons/3d-basic-rendering/3d-viewing-pinhole-camera/virtual-pinhole-camera-model)
 ### Image plane
 
 <figure>
@@ -74,7 +74,7 @@ V:
 
 V:
 
-## Introduction: Virtual camera model
+## Introduction: [Virtual camera model](https://www.scratchapixel.com/lessons/3d-basic-rendering/3d-viewing-pinhole-camera/virtual-pinhole-camera-model)
 ### Image plane
 
 <figure>
@@ -84,7 +84,7 @@ V:
 
 V:
 
-## Introduction: Virtual camera model
+## Introduction: [Virtual camera model](https://www.scratchapixel.com/lessons/3d-basic-rendering/3d-viewing-pinhole-camera/virtual-pinhole-camera-model)
 ### Frustum
 
 <figure>
@@ -363,14 +363,54 @@ H:
 
 ## Final thoughts
 
+> Problem: Implement Alberti's Veil on a computer -> virtual (pinhole) camera model
+
+<!-- .element: class="fragment" data-fragment-index="1"-->
+
+> Challenges: visibility & shading
+
+<!-- .element: class="fragment" data-fragment-index="2"-->
+
+> Strategies: Raster vs Ray-tracing
+
+<!-- .element: class="fragment" data-fragment-index="3"-->
+
+V:
+
+## Final thoughts
+### Raster vs Ray-tracing
+
+V:
+
+## Final thoughts
+### [OpenGL pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
+
+<figure>
+    <img height='400' src='fig/rendering_pipeline.png'/>
+    <figcaption>Opengl Rendering Pipeline</figcaption>
+</figure>
+
+N:
+
+1. Virtual camera: vertex specification & vertex shader
+2. Shading: fragment shader
+3. Visibility (z-buffer): per sample operations
+
+V:
+
+## Final thoughts
+### [OpenGL pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview): [Virtual camera model](https://learnopengl.com/#!Getting-started/Coordinate-Systems)
+
+<figure>
+    <img height='400' src='fig/coordinate_systems.png'/>
+    <figcaption>Matrix transform operations</figcaption>
+</figure>
+
 H:
 
 ## References
 
-1. [Introduction to rendering](http://www.scratchapixel.com/lessons/3d-basic-rendering/rendering-3d-scene-overview/)
-1. [Rasterization intro?](http://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation)
-1. [Rasterization details?](http://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage)
+1. [Learn Computer Graphics From Scratch!](http://www.scratchapixel.com/)
 1. [2D cross-product](https://www.gamedev.net/forums/topic/289972-cross-product-of-2d-vectors/)
-1. [Introduction to ray tracing](http://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing)
-1. [Ray tracing rendering technique overview](http://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview)
-1. [Ray Tracing: Rendering a Triangle](http://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-rendering-a-triangle/barycentric-coordinates)
+1. [OpenGL coordinate systems](https://learnopengl.com/#!Getting-started/Coordinate-Systems)
+1. [OpenGL pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
