@@ -384,7 +384,7 @@ V:
 |-------------------|---------------|-------------|
 | _Philosophy_      | [Intromission](https://en.wikipedia.org/wiki/Visual_perception#Early_studies)  | [Emission](https://en.wikipedia.org/wiki/Visual_perception#Early_studies) |
 | _Visibility_      | Easy          | Trivial     |
-| _Shading_ realism | Great         | _Promising_ |
+| _Shading_ realism | _Promising_   | Great       |
 | _Parallelizable_  | Easy          | Hard        |
 | _Complexity_      | Linear        | Exponential |
 
