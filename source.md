@@ -1,4 +1,4 @@
-<section id="themes">
+﻿<section id="themes">
 	<h2>Themes</h2>
 		<p>
 			Set your presentation theme: <br>
@@ -274,10 +274,42 @@ V:
 
 ## Raster approach: shading
 
-<!– 
-Desarrollar el tema que se encuentra aca (en slides verticales, i.e., empleando el tag 'V:'):
-https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage
-–>
+V:
+
+## Raster approach: shading
+#### SO... WHY DO GPUs USE RASTRERIZATION OVER RAY TRACING?
+
+<figure>
+    <img height='400' src='fig/3.png'/>
+</figure>
+
+V:
+
+## Raster approach: shading
+### CREATE AN IMAGE IN RAY-TRACING
+
+*   Cast a ray for each pixel in the image.
+*   The first rays emitted are called primary rays or camera rays.
+*   More rays can be spawned from primary rays. These other rays are called secondary rays.
+*   When a primary ray is cast into the scene, the next step is to find if it intersects any object in the scene.
+*   When primary rays are used to solve the visibility problem, we can use the term ray-casting.
+
+V:
+
+## Raster approach: shading
+### HOW DOES SHADING WORK ON RAY-TRACING?
+
+There are 2 main types of rays, Primary rays and secondary rays, Secondary rays can be Shadow Rays or reflection rays depending on their function.
+
+V:
+
+## Raster approach: shading
+### HOW DOES SHADING WORK ON RAY-TRACING?
+
+<figure>
+    <img height='400' src='fig/4.png'/>
+		<img height='400' src='fig/5.png'/>
+</figure>
 
 H:
 
@@ -349,15 +381,120 @@ V:
 
 ## Ray-tracing approach: shading
 
-<!–
-Desarrollar el tema que se encuentra aca (en slides verticales, i.e., empleando el tag 'V:'):
-https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview
-desde la seccion: 'Casting Rays into the scene'
+V:
 
-el tema para seguirla seria este de aca:
-https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview/light-transport-ray-tracing-whitted
-pero no el Lunes, sino quizas mas adelante
-–>
+### Ray-tracing approach: shading
+#### TESTING FOR RAY-GEOMETRIC INTERSECTIONS
+
+Testing if a ray intersects any object in the scene requires to loop over all the objects in the scene and test the current object against the ray.
+
+```
+Ray ray = buildCameraRay(i, j);
+for (int k = 0; k < numObjects; ++k) {
+	if (intersect(ray, objects[k]) {
+		// this ray intersects objects[k]
+		}
+	}
+```
+
+V:
+
+### Ray-tracing approach: shading
+#### TESTING FOR RAY-GEOMETRIC INTERSECTIONS
+##### GEOMETRY IN 3D
+
+*   **Simple shapes:** Can be defined mathematically, or parametrically.
+*   **Shapes of more complex objects:** Can only be described using polygon meshes, subdivisions surfaces or NURBS surfaces (or something equivalent).
+
+V:
+
+### Ray-tracing approach: shading
+#### TESTING FOR RAY-GEOMETRIC INTERSECTIONS
+##### GEOMETRY IN 3D
+
+<figure>
+    <img height='360' src='fig/9.png'/>
+    <figcaption>Ray can intersect several objects</figcaption>
+</figure>
+
+V:
+
+### Ray-tracing approach: shading
+#### TESTING FOR RAY-GEOMETRIC INTERSECTIONS
+##### COMPLEX SHAPES
+
+Convert each geometry type into the same internal representation, which in almost 99% of the cases, is going to be a triangulated polygon mesh.
+
+<figure>
+    <img height='260' src='fig/8.png'/>
+    <figcaption>Visibility computation</figcaption>
+</figure>
+
+V:
+
+
+## WHITTED RAY-TRACING
+
+### WHITTED RAY-TRACING
+
+It’s one of the most classical examples of light transport algorithm based on ray-tracing.
+
+<figure>
+    <img height='260' src='fig/9.png'/>
+    <figcaption>Image produced by Turner Whitted with the algorithm he developed in 1980</figcaption>
+</figure>
+
+V:
+
+### WHITTED RAY-TRACING
+
+If an object A is a mirror like surface, and that an object B seats on top of it, then we would like to see the reflection of B into A.
+
+If A is not a flat surface, there is no easy solution for computing this reflection.
+
+Things get even harder if B is also reflective. Mirror surfaces keep reflecting images of themselves causing the "infinity room" effect.
+
+V:
+
+### WHITTED RAY-TRACING
+
+<figure>
+    <img height='260' src='fig/10.png'/>
+    <figcaption>A light ray emitted by the sphere bounces multiple times off of the surface of the two mirrors before it reaches the eye</figcaption>
+</figure>
+
+V:
+
+### WHITTED RAY-TRACING
+
+The refraction direction can be computed using Snell's law and depends on the surface orientation (the surface's normal), the incoming light direction and the material refractive index (around 1.3 for water and 1.5 for glass).
+
+V:
+
+## WHITTED RAY-TRACING
+
+Whitted proposed to use these laws to compute the reflection and refraction direction of rays as they intersect reflective or transparent surfaces, and follow the path of these rays to find out the color of the object they would intersect.
+
+V:
+
+### WHITTED RAY-TRACING
+#### SNELL'S LAW
+
+Three cases:
+
+1.  If the surface at the intersection point is opaque and diffuse, use the [Phong model](https://en.wikipedia.org/wiki/Phong_reflection_model), to compute the color of the object at the intersection point.
+2.  If the surface is a mirror like surface, trace another reflection ray at the intersection point.
+3.  if the surface is a transparent surface, cast another reflection and a refraction ray at the intersection point.
+
+V:
+
+### WHITTED RAY-TRACING
+
+<figure>
+    <img height='260' src='fig/11.png'/>
+		<img height='260' src='fig/12.png'/>
+    <figcaption>How do we find the color reflected off of the surface of a mirror?</figcaption>
+</figure>
 
 H:
 
