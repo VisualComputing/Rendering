@@ -389,14 +389,135 @@ V:
 | _Complexity_      | Linear        | Exponential |
 
 V:
+<!-- Interactive OpenGL Pipeline 
+     Author: Edwin Alexander Bohorquez -->
+     
+### INTERACTIVE OPENGL PIPELINE
+<p style="color:white; font-size:15px; text-align:center;">
+  Creado por Edwin Alexander Bohorquez
+</p>  
+<body>
 
-## Final thoughts
-### [OpenGL pipeline](https://www.khronos.org/opengl/wiki/Rendering_Pipeline_Overview)
+<div class="tab">
+  <button class="tablinks" onclick="openStage(event, 'vertex_specification')" id="defaultOpen">Vertex Specification</button>
+  <button class="tablinks" onclick="openStage(event, 'vertex_shader')">Vertex Shader</button>
+  <button class="tablinks" onclick="openStage(event, 'tessellation')">Tessellation</button>
+  <button class="tablinks" onclick="openStage(event, 'geometry_shader')">Geometry Shader</button>
+  <button class="tablinks" onclick="openStage(event, 'vertex_post_processing')">Vertex Post-Processing</button>
+  <button class="tablinks" onclick="openStage(event, 'primitive_assembly')">Primitive Assembly</button>
+  <button class="tablinks" onclick="openStage(event, 'rasterization')">Rasterization</button>
+  <button class="tablinks" onclick="openStage(event, 'fragment_shader')">Fragment Shader</button>
+  <button class="tablinks" onclick="openStage(event, 'per_sample_operations')">Per-Sample Operations</button>
+</div>
 
-<figure>
-    <img height='400' src='fig/rendering_pipeline.png'/>
-    <figcaption>Opengl Rendering Pipeline</figcaption>
-</figure>
+<div id="vertex_specification" class="tabcontent">
+  <p style="color:black; font-size:15px; text-align:center;"><b>Vertex Specification</b></p>
+  <img src="images/vertex_specification.png">
+  <p class="text" style="font-size:15px; margin-right: 0.5cm;">Es el proceso de configurar un objeto a traves de vertices, los cuales definen los limites de una primitiva. Las primitivas son formas  básicas de dibujo, como triángulos, líneas y puntos.
+  <br/>En esta etapa se manejan objetos como:
+  </p>
+  <ul>
+    <li class="text" style="font-size:15px">Vertex Array Objects</li>
+    <li class="text" style="font-size:15px">Vertex Buffer Objects</li>
+  </ul>  
+</div>
+
+<div id="vertex_shader" class="tabcontent">
+  <p style="color:black; font-size:15px; text-align:center;"><b>Vertex Shader</b></p>
+  <img src="images/vertex_shader.png">
+  <p class="text" style="font-size:15px; margin-right: 0.5cm;">En esta etapa se realiza un procesamiento basico de los vertices de forma individual.Este procesamiento es hecho por los vertex shader    que reciben como entrada atributos de la representación de vértices y luego convierten cada vértice entrante en un único vértice saliente.
+  <br/>En esta etapa:
+  </p>
+  <ul>
+    <li class="text" style="font-size:15px">Debe haber un mapeo 1:1 desde los vértices de entrada hasta los vértices de salida</li>
+    <li class="text" style="font-size:15px">Los vertex shader se pueden usar para hacer una iluminación por vértice</li>
+    <li class="text" style="font-size:15px"><b>Los vertex shader no son opcionales.</b></li>
+  </ul>  
+</div>
+
+<div id="tessellation" class="tabcontent">
+  <p style="color:black; font-size:15px; text-align:center;"><b>Tessellation</b></p>
+  <img src="images/tessellation.png">
+  <p class="text" style="font-size:15px; margin-right: 0.5cm;">Hace referencia a una regularidad o patrón de figuras que se usa para recubrir completamente una superficie plana que cumple con dos requisitos:
+  </p>
+  <ul>
+    <li class="text" style="font-size:15px">Que no queden espacios</li>
+    <li class="text" style="font-size:15px">Que no se superpongan las figuras</li>
+  </ul>  
+<p class="text" style="font-size:15px"><b>El teselado es un proceso opcional.</b></p>
+</div>
+
+<div id="geometry_shader" class="tabcontent">
+  <p style="color:black; font-size:15px; text-align:center;"><b>Geometry Shader</b></p>
+  <img src="images/geometry_shader.png">
+  <p class="text" style="font-size:15px; margin-right: 0.5cm;">Los shaders de geometría son programas definidos por el usuario que procesan cada primitiva entrante, devolviendo cero o más primitivas de salida.<b>Este proceso es opcional.</b><br/>Algoritmos que pueden ser implementados en esta etapa:</p>
+  <ul>
+    <li class="text" style="font-size:15px">Point Sprite Expansion</li>
+    <li class="text" style="font-size:15px">Dynamic Particle Systems</li>
+    <li class="text" style="font-size:15px">Fur/Fin Generation</li>
+    <li class="text" style="font-size:15px">Shadow Volume Generation</li>
+    <li class="text" style="font-size:15px">Single Pass Render-to-Cubemap</li>
+    <li class="text" style="font-size:15px">Per-Primitive Material Swapping</li>    
+    <li class="text" style="font-size:15px">Per-Primitive Material Setup</li> 
+  </ul> 
+</div>
+
+<div id="vertex_post_processing" class="tabcontent">
+  <p style="color:black; font-size:15px; text-align:center;"><b>Vertex Post-Processing</b></p>
+  <img src="images/vertex_post_processing.png">
+  <p class="text" style="font-size:15px; margin-right: 0.5cm;">Después del procesamiento de vértices basado en sombreadores, los vértices se someten a varios pasos de procesamiento de funciones fijas.</p>
+<ul>
+  <li class="text" style="font-size:15px; margin-right: 0.5cm;">Transform Feedback: Las salidas de geometry shader se escriben en una serie de Buffer Objects.
+  </li>
+  <li class="text" style="font-size:15px; margin-right: 0.5cm;">Clipping: Las primitivas generadas por las etapas anteriores se recopilan y luego se recortan al volumen de la vista.
+  </li>
+</ul>     
+</div>
+
+<div id="primitive_assembly" class="tabcontent">
+  <p style="color:black; font-size:15px; text-align:center;"><b>Primitive Assembly</b></p>
+  <img src="images/primitive_assembly.png">
+  <p class="text" style="font-size:15px; margin-right: 0.5cm;">Es el proceso de recopilar resultados de datos de vértices de las etapas anteriores y componerlos en una secuencia de primitivas. El tipo de primitiva que el usuario representa determina cómo funciona este proceso.<br/>El resultado de este proceso es una secuencia ordenada de primitivas simples (líneas, puntos o triángulos).<br/>
+<b>Face Culling:</b></p>
+  <ul>
+    <li class="text" style="font-size:15px; margin-right: 0.5cm;">Las primitivas de triangulo se pueden descartar (es decir, descartar sin renderizar) según la cara del triángulo en el espacio de la ventana.</li>
+    <li class="text" style="font-size:15px">Evita la representación de triángulos que se alejan del observador.</li>
+    <li class="text" style="font-size:15px">La eliminación de caras es una forma de evitar el renderizado de tales primitivas.</li>   
+  </ul> 
+</div>
+
+<div id="rasterization" class="tabcontent">
+  <p style="color:black; font-size:15px; text-align:center;"><b>Rasterization</b></p>
+  <img src="images/rasterization.png">
+  <p class="text" style="font-size:15px; margin-right: 0.5cm;">Es el proceso por el cual una imagen descrita en un formato gráfico vectorial se convierte en un conjunto de píxeles o puntos para ser desplegados en un medio de salida digital, como una pantalla de computadora.<br/>Algoritmos:</p>
+  <ul>
+    <li class="text" style="font-size:15px;">Algoritmo DDA.</li>
+    <li class="text" style="font-size:15px">Algoritmo de Bresenham.</li>    
+  </ul> 
+
+</div>
+
+<div id="fragment_shader" class="tabcontent">
+  <p style="color:black; font-size:15px; text-align:center;"><b>Fragment Shader</b></p>
+  <img src="images/fragment_shader.png">
+  <p class="text" style="font-size:15px; margin-right: 0.5cm;">Es la etapa de Shader que procesará un fragmento generado por la Rasterización, en un conjunto de colores y un solo valor de profundidad.<br/>Los fragment shader toman un único fragmento como entrada y producen un solo fragmento como resultado.</br><b>Los fragment shaders son opcionales.</b> 
+</p>
+</div>
+
+<div id="per_sample_operations" class="tabcontent">
+  <p style="color:black; font-size:15px; text-align:center;"><b>Per-Sample Operations</b></p>
+  <img src="images/per_sample_operations.png">
+  <p class="text" style="font-size:15px">La salida de datos de fragmento se pasa a través de una secuencia de pasos:<br/><b>Paso 1: </b>pruebas de sacrificio:</p>
+  <ul>
+    <li class="text" style="font-size:15px">Prueba de propiedad de píxeles</li>
+    <li class="text" style="font-size:15px">Prueba de tijera</li>
+    <li class="text" style="font-size:15px">Prueba de plantilla</li>
+    <li class="text" style="font-size:15px">Prueba de profundidad</li>
+  </ul> 
+<p class="text" style="font-size:15px; margin-right: 0.5cm;" ><b>Paso 2 : </b>Se mezclan colores (entre el fragmento y framebuffer) y se escriben los datos del fragmento en el framebuffer para que al final se pinte en la pantalla.</p>
+</div>
+
+</body>
 
 N:
 
