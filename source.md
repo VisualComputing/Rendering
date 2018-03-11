@@ -273,11 +273,109 @@ V:
 V:
 
 ## Raster approach: shading
+### Barycentric coordinates overview
 
-<!– 
-Desarrollar el tema que se encuentra aca (en slides verticales, i.e., empleando el tag 'V:'):
-https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage
-–>
+`$F_{01}(p) := (v_{0y} - v_{1y}) p_x + (v_{1x} - v_{0x}) p_y + (v_{0x} v_{1y} - v_{0y} v_{1x})$`
+`$F_{12}(p) := (v_{1y} - v_{2y}) p_x + (v_{2x} - v_{1x}) p_y + (v_{1x} v_{2y} - v_{1y} v_{2x})$`
+`$F_{20}(p) := (v_{2y} - v_{0y}) p_x + (v_{0x} - v_{2x}) p_y + (v_{2x} v_{0y} - v_{2y} v_{0x})$`
+
+<figure>
+    <img height='400' src='fig/edge_fx.png'/>
+    <figcaption>[Edge functions](https://fgiesen.wordpress.com/2013/02/06/the-barycentric-conspirac/)</figcaption>
+</figure>
+
+V:
+
+## Raster approach: shading
+### Barycentric coordinates: properties
+
+`$F_{01}(v_0) = F_{01}(v_1) = 0$`
+
+`$F_{01}(v_2) = 2 \triangle(v_0,v_1,v_2)$`
+
+<figure>
+    <img height='400' src='fig/edge_fx.png'/>
+    <figcaption>[Edge functions](https://fgiesen.wordpress.com/2013/02/06/the-barycentric-conspirac/)</figcaption>
+</figure>
+
+V:
+
+## Raster approach: shading
+### Barycentric coordinates of a point $p$
+
+`$w_0(p) := F_{12}(p)$`
+
+`$w_1(p) := F_{20}(p)$`
+
+`$w_2(p) := F_{01}(p)$`
+
+which are simply the edge functions evaluated at $p$
+
+> if `$w_0(p) > 0$`, `$w_1(p) > 0$` and `$w_2(p) > 0$` (for WCC) then `$p \in \triangle(v_0,v_1,v_2)$`
+
+V:
+
+## Raster approach: shading
+### Normalized barycentric coordinates of a point $p$
+
+`$\lambda_0(p) := F_{12}(p) / 2 \triangle(v_0,v_1,v_2)$`
+
+`$\lambda_1(p) := F_{20}(p) / 2 \triangle(v_0,v_1,v_2)$`
+
+`$\lambda_2(p) := F_{01}(p) / 2 \triangle(v_0,v_1,v_2)$`
+
+where `$\lambda_0(p) + \lambda_1(p) + \lambda_2(p) = 1$`
+
+V:
+
+## Raster approach: shading
+### Uses: 1. Rasterization (using signed edge functions)
+
+<figure>
+    <img height='400' src='fig/triangle_rasterizer.png'/>
+    <figcaption>[Rasterization](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage)</figcaption>
+</figure>
+
+V:
+
+## Raster approach: shading
+### Uses: 2. Antialising (using signed edge functions)
+
+<figure>
+    <img height='400' src='fig/antialiasing1.png'/>
+    <figcaption>[Anti-alising](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)</figcaption>
+</figure>
+
+V:
+
+## Raster approach: shading
+### Uses: 2. Antialising (using signed edge functions)
+
+<figure>
+    <img height='400' src='fig/antialiasing2.png'/>
+    <figcaption>[Anti-alising](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)</figcaption>
+</figure>
+
+V:
+
+## Raster approach: shading
+### Uses: 3. Interpolation (using normalized barycentric coordinate)
+
+<figure>
+    <img height='400' src='fig/color_interpolation.png'/>
+    <figcaption>[Color interpolation](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage)</figcaption>
+</figure>
+
+> Anything can be interpolated!
+
+V:
+
+## Raster approach: shading
+### References
+
+* [The barycentric conspiracy](https://fgiesen.wordpress.com/2013/02/06/the-barycentric-conspirac/)
+* [Rasterization Stage](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage)
+* [Anti-alising](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)
 
 H:
 
@@ -349,15 +447,8 @@ V:
 
 ## Ray-tracing approach: shading
 
-<!–
-Desarrollar el tema que se encuentra aca (en slides verticales, i.e., empleando el tag 'V:'):
-https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview
-desde la seccion: 'Casting Rays into the scene'
-
-el tema para seguirla seria este de aca:
-https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview/light-transport-ray-tracing-whitted
-pero no el Lunes, sino quizas mas adelante
-–>
+1. [Overview of the Ray-Tracing Rendering Technique](https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview).
+2. [Light Transport Algorithms and Ray-Tracing: Whitted Ray-Tracing](https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-overview/light-transport-ray-tracing-whitted).
 
 H:
 
