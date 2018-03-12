@@ -28,8 +28,8 @@ H:
 # Outline
 
 1. Introduction: the problem
-2. Ray-tracing approach
-3. Rasterization approach
+2. Rasterization approach
+3. Ray-tracing approach
 4. Final thoughts
 
 H:
