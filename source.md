@@ -452,6 +452,95 @@ V:
 
 H:
 
+
+
+
+
+## ANTIALIASING: MARCO TEÓRICO
+
+Las bases para el algoritmo de rasterización son:
+* Buffer Z también conocido como Buffer Profundo
+* Interpolación Profunda
+
+<img style="border: none;box-shadow: none;width: 550px;position: absolute;top: 85%;left: 30%" src="fig/antialiasing/ZBuffer.jpg"/>
+
+V:
+
+## ILUSTRACIÓN DEL PROBLEMA
+
+Apreciación de aristas irregulares o bordes escalonados (Jaggies)
+
+<img style="border: none;box-shadow: none;width: 900px;height: 400px;" src="fig/antialiasing/BordesEscalonados.jpg"/>
+
+V:
+
+## ILUSTRACIÓN DEL PROBLEMA
+
+Superficies Continuas representados en Pixeles como elementos discretos
+
+<img style="border: none;box-shadow: none;width: 1000px;height: 425px;" src="fig/antialiasing/Bloques.jpg"/>
+
+V:
+
+## ILUSTRACIÓN DE LA SOLUCIÓN
+
+SuperSampling: Antialiasing por sobremuestra (En toda la imagen)
+
+<img style="border: none;box-shadow: none;width: 500px;height: 425px;" src="fig/antialiasing/Bordes4.png"/>
+
+V:
+
+## ILUSTRACIÓN DE LA SOLUCIÓN
+
+MultiSampling: Antialiasing por sobremuestra (En bordes solamente)
+
+<img style="border: none;box-shadow: none;width: 600px;height: 425px;" src="fig/antialiasing/Bordes2.png"/>
+
+V:
+
+## ILUSTRACIÓN DE LA SOLUCIÓN
+
+El Antialiasing hace uso de algoritmos de suavizado de bordes
+
+<img style="border: none;box-shadow: none;width: 600px;height: 425px;" src="fig/antialiasing/Bordes3.png"/>
+
+V:
+
+## ANTECEDENTES
+
+Algoritmo de Bresenham: Trazado de líneas en dispositivos gráficos
+
+<img style="border: none;box-shadow: none;width: 800px;height:600px;position: absolute;top: 90%;left: 20%;" src="fig/antialiasing/AlgoritmoBresenham.gif"/>
+
+V:
+
+## ANTECEDENTES
+
+CoverageSampling: Versión de MultiSampling de NVIDIA optimizada
+
+<img style="border: none;box-shadow: none;width: 320px;height:320px;top: 90%;right: -500%;" src="fig/antialiasing/CS.png"/>  <img style="border: none;box-shadow: none;width: 320px;height:320px;top: 90%;left: 60%;" src="fig/antialiasing/CS16.png"/>
+
+V:
+
+## DEMO [URL del Script](https://github.com/mamurciac/reveal.js/blob/master/sketches/mySketch.js)
+
+<div id='mysketch_id'></div>
+
+V:
+
+## BIBLIOGRAFÍA
+
+<small>Reveal.js's Template forked at <a href="https://github.com/hakimel/reveal.js/">https://github.com/hakimel/reveal.js</a>. By <a href="http://hakim.se">Hakim El Hattab and his contributors</a></small>
+<small>Rasterization: a Practical Implementation. Scratchapixel 2.0. Recuperado de <a href="https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation">https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation</a></small>
+<small>Quagliozzi, E. Z Buffering. PDA - FX. Recuperado de <a href="http://pda-fx.net/pagedoc.php?id=4&lg=EN">http://pda-fx.net/pagedoc.php?id=4&amp;lg=EN</a></small>
+<small>23 de Septiembre de 2017. Algoritmo de Bresenham. Wikipedia. Recuperado de <a href="https://es.wikipedia.org/wiki/Algoritmo_de_Bresenham">https://es.wikipedia.org/wiki/Algoritmo_de_Bresenham></a></small>
+
+H:
+
+
+
+
+
 ## Final thoughts
 
 > Problem: Implement Alberti's Veil on a computer -> virtual (pinhole) camera model
