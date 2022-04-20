@@ -339,21 +339,21 @@ V:
 V:
 
 ## Raster approach: shading
-### Uses: 2. Antialising (using signed edge functions)
+### Uses: 2. Antialiasing (using signed edge functions)
 
 <figure>
     <img height='400' src='fig/antialiasing1.png'/>
-    <figcaption>[Anti-alising](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)</figcaption>
+    <figcaption>[Anti-aliasing](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)</figcaption>
 </figure>
 
 V:
 
 ## Raster approach: shading
-### Uses: 2. Antialising (using signed edge functions)
+### Uses: 2. Antialiasing (using signed edge functions)
 
 <figure>
     <img height='400' src='fig/antialiasing2.png'/>
-    <figcaption>[Anti-alising](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)</figcaption>
+    <figcaption>[Anti-aliasing](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)</figcaption>
 </figure>
 
 V:
@@ -375,7 +375,7 @@ V:
 
 * [The barycentric conspiracy](https://fgiesen.wordpress.com/2013/02/06/the-barycentric-conspirac/)
 * [Rasterization Stage](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-stage)
-* [Anti-alising](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)
+* [Anti-aliasing](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)
 
 H:
 
