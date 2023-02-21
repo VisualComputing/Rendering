@@ -21,7 +21,8 @@ H:
 
 # Rendering
 
-Visual Computing
+Jean Pierre Charalambos  
+Universidad Nacional de Colombia
 
 H:
 
