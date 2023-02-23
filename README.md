@@ -1,6 +1,6 @@
 ## Visual Computing Slides -- Rendering
 
-Part of the *Visual Computing* course given at [National University of Colombia](http://www.disi.unal.edu.co/) by [Jean Pierre Charalambos](http://otrolado.info) and [Andres Colubri](http://andrescolubri.net/).
+Part of the *Visual Computing* course given at [Universidad Nacional de Colombia](https://unal.edu.co/) by Jean Pierre Charalambos.
 
 Powered by [reveal](https://github.com/hakimel/reveal.js).
 
