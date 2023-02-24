@@ -22,7 +22,9 @@ H:
 # Rendering
 
 Jean Pierre Charalambos  
-[Universidad Nacional de Colombia](https://unal.edu.co/)
+[Universidad Nacional de Colombia](https://unal.edu.co/)  
+Presentation best seen [online](https://visualcomputing.github.io/Rendering/)  
+See also the [source code](https://github.com/VisualComputing/Rendering)
 
 H:
 
